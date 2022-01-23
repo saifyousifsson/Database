@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="WpfApp4.Views.CreatecaseView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp4.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="1000" d:DesignWidth="800">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="New Case" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <StackPanel Margin="20 10" Grid.Row="1" RenderTransformOrigin="0.478,0.87">
+            <Label Content="Title" />
+            <TextBox x:Name="tbtitle"    Padding="5" Margin="0 3 0 10"/>
+            <Label Content="Description"  />
+            <TextBox x:Name="tbdescription" Height="70"  Padding="5" Margin="0 3 0 10"/>
+            <Label Content="Date created"/>
+            <DatePicker x:Name="tbdatecreated"  Padding="5" Margin="0 3 0 10"/>
+            <Label Content="Date changed"/>
+            <DatePicker x:Name="tbDatechanged" Padding="5" Margin="0 3 0 10"/>
+
+
+            <TextBlock Text="change status" Padding="5" Margin="23 10 0 -15" ></TextBlock>
+            <ComboBox x:Name="cbStatus"  Margin="25 25 25 60" SelectionChanged="cbStatus_SelectionChanged"></ComboBox>
+
+            <Button x:Name="btnAdd" FontSize="14" Content="Create New Case" Padding="0 10" Margin="0 10 0 10" Click="btnAdd_Click_1"  />
+
+        </StackPanel>
+
+    </Grid>
+</UserControl>

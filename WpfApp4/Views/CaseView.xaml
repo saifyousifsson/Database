@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="WpfApp4.Views.CaseView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp4.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Text="Case List" FontSize="18" HorizontalAlignment="Left" Margin="7" VerticalAlignment="Center"  />
+            </Grid>
+
+            <Grid Margin="7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Text="#" />
+                <TextBlock Grid.Column="1" Text="Title" />
+                <TextBlock Grid.Column="2" Text="Description" />
+                <TextBlock Grid.Column="3" Text="Date created" />
+                <TextBlock Grid.Column="4" Text="Date changed" />
+                <TextBlock Grid.Column="5" Text="Status" />
+            </Grid>
+        </StackPanel>
+        <ListView x:Name="lvCaseView" DataContext="Wpf.Models.Case" Grid.Row="1" Background="Transparent" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0" Text="{Binding Id}"  />
+                        <TextBlock Grid.Column="1" Text="{Binding Rubrik}" />
+                        <TextBlock Grid.Column="2" Text="{Binding Beskrivning}" />
+                        <TextBlock Grid.Column="3" Text="{Binding skapades_date}" />
+                        <TextBlock Grid.Column="4" Text="{Binding Andrades_Date}" />
+                        <TextBlock Grid.Column="5" Text="{Binding Status}" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+
+    
+</UserControl>
